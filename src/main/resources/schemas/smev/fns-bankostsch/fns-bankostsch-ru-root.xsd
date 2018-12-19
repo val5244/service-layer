@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by VI (GNIVC FNS RF) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="urn://x-artefacts-fns-bankostsch/root/171-08/4.0.1" xmlns:fnst="urn://x-artefacts-fns-bankostsch/types/4.0.1" targetNamespace="urn://x-artefacts-fns-bankostsch/root/171-08/4.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="urn://x-artefacts-fns-bankostsch/types/4.0.1" schemaLocation="./commons/fns-bankostsch-types.xsd"/>
+	<xs:element name="FNSPriostanSchRequest">
+		<xs:annotation>
+			<xs:documentation>Запрос о наличии действующих решений о приостановлении операций по счетам</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="ИННФЛ" type="fnst:ИННФЛТип">
+					<xs:annotation>
+						<xs:documentation>ИНН физического лица, являющегося индивидуальным предпринимателем (или иным лицом, указанным в статье 76 НК РФ) -  плательщика сбора, плательщика страховых взносов, налогового агента</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ИННЮЛ" type="fnst:ИННЮЛТип">
+					<xs:annotation>
+						<xs:documentation>ИНН организации (или иного лица, указанного в статье 76 НК РФ) -  плательщика сбора, плательщика страховых взносов, налогового агента</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="КИО" type="fnst:string-5">
+					<xs:annotation>
+						<xs:documentation>Код иностранной организации (или иного лица, указанного в статье 76 НК РФ) -  плательщика сбора, плательщика страховых взносов, налогового агента</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:attribute name="ИдЗапрос" type="fnst:string-36" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор запроса, сформированный запрашивающей стороной</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="БИК" type="fnst:БИКТип" use="required">
+				<xs:annotation>
+					<xs:documentation>БИК банка (филиала банка), учреждения Банка России</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FNSPriostanSchResponse">
+		<xs:annotation>
+			<xs:documentation>Ответ на запрос о наличии действующих решений о приостановлении операций по счетам</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="СвНалРеш">
+					<xs:annotation>
+						<xs:documentation>Сведения о наличии действующих решений о приостановлении операций по счетам</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:choice>
+								<xs:element name="ИННФЛ" type="fnst:ИННФЛТип">
+									<xs:annotation>
+										<xs:documentation>ИНН физического лица, являющегося индивидуальным предпринимателем (или иным лицом, указанным в статье 76 НК РФ) -  плательщика сбора, плательщика страховых взносов, налогового агента</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="ИННЮЛ" type="fnst:ИННЮЛТип">
+									<xs:annotation>
+										<xs:documentation>ИНН организации (или иного лица, указанного в статье 76 НК РФ) -  плательщика сбора, плательщика страховых взносов, налогового агента</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="КИО" type="fnst:string-5">
+									<xs:annotation>
+										<xs:documentation>Код иностранной организации (или иного лица, указанного в статье 76 НК РФ) -  плательщика сбора, плательщика страховых взносов, налогового агента</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:choice>
+							<xs:choice>
+								<xs:element name="НаимОрг" type="fnst:string-1000">
+									<xs:annotation>
+										<xs:documentation>Наименование организации</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="ФИО" type="fnst:ФИОТип">
+									<xs:annotation>
+										<xs:documentation>Фамилия, имя отчество физического лица, являющегося индивидуальным предпринимателем, нотариусом, занимающимся частной практикой, адвокатом, учредившим адвокатский кабинет, индивидуальным предпринимателем, не являющимся налогоплательщиком (налоговым агентом), которые при этом обязаны представлять налоговые декларации в соответствии с частью второй НК РФ</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:choice>
+							<xs:element name="СвДейстРеш" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Сведения действующих решений о приостановлении операций по счетам</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="НомРеш" type="fnst:string-20" use="required">
+										<xs:annotation>
+											<xs:documentation>Номер решения о приостановлении</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ДатаРеш" type="xs:date" use="required">
+										<xs:annotation>
+											<xs:documentation>Дата решения о приостановлении</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="КодНО" type="fnst:СОНОТип" use="required">
+										<xs:annotation>
+											<xs:documentation>Код налогового органа</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="БИКРеш" type="fnst:БИКТип" use="required">
+										<xs:annotation>
+											<xs:documentation>БИК банка, в который направлено решение</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ДатаВремИнфБД" type="xs:dateTime" use="required">
+										<xs:annotation>
+											<xs:documentation>Дата и время поступления информации в федеральную БД</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="БИК" type="fnst:БИКТип" use="required">
+							<xs:annotation>
+								<xs:documentation>БИК банка (филиала банка), учреждения Банка России, выполняющего запрос</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="РезультатЗапр" use="required">
+							<xs:annotation>
+								<xs:documentation>Результат запроса</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="fnst:string-1">
+									<xs:enumeration value="0"/>
+									<xs:enumeration value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="ДатаВремПолучЗапр" type="xs:dateTime" use="required">
+							<xs:annotation>
+								<xs:documentation>Дата и время получения запроса</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="КодОбр">
+					<xs:annotation>
+						<xs:documentation>Код обработки</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="fnst:string-2"/>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+			<xs:attribute name="ИдЗапрос" type="fnst:string-36" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор запроса, сформированный запрашивающей стороной</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

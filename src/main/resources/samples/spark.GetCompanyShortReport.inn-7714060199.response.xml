@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+	<Data>
+		<Report>
+			<SparkID>1463973</SparkID>
+			<CompanyType>5</CompanyType>
+			<Status Date="2018-11-15" Type="Действующее" Code="24" />
+			<EGRPOIncluded>true</EGRPOIncluded>
+			<IsActing>true</IsActing>
+			<DateFirstReg>1992-08-19</DateFirstReg>
+			<ShortNameRus>МОРСКОЙ БАНК (ОАО)</ShortNameRus>
+			<ShortNameEn>NHE MARITIME BANK</ShortNameEn>
+			<FullNameRus>МОРСКОЙ АКЦИОНЕРНЫЙ БАНК (Открытое акционерное общество)
+			</FullNameRus>
+			<INN>7714060199</INN>
+			<KPP>775001001</KPP>
+			<OGRN>1027700568224</OGRN>
+			<OKPO>05838400</OKPO>
+			<BIK>044583125</BIK>
+			<FCSMCode>00077-B</FCSMCode>
+			<OKATO Code="45286585000" RegionName="Москва" RegionCode="45" />
+			<OKOPF Code="47" CodeNew="12247"
+				Name="Публичные акционерные общества" />
+			<OKVED2List>
+				<OKVED Code="64.19" Name="Денежное посредничество прочее"
+					IsMain="true" />
+			</OKVED2List>
+			<CharterCapital>809800000</CharterCapital>
+			<LeaderList>
+				<Leader ActualDate="2009-03-31"
+					FIO="Дергунов Игорь Федорович" Position="председатель правления" />
+			</LeaderList>
+			<PhoneList>
+				<Phone Code="495" Number="7390633" />
+				<Phone Code="812" Number="3253131" />
+				<Phone Code="495" Number="7771177" />
+				<Phone Code="495" Number="7887399" />
+			</PhoneList>
+			<IndexOfDueDiligence Index="1"
+				IndexDesc="Низкий риск" />
+			<CompanyWithSameInfo>
+				<TelephoneCount PhoneCode="495" PhoneNumber="7390633">1
+				</TelephoneCount>
+				<AddressCount>0</AddressCount>
+				<AddressWithoutRoomCount>0</AddressWithoutRoomCount>
+				<AddressNotAffiliatedCount>0</AddressNotAffiliatedCount>
+				<AddressFTSCount>0</AddressFTSCount>
+				<ManagerCountInCountry>1</ManagerCountInCountry>
+				<ManagerCountInRegion>1</ManagerCountInRegion>
+				<ManagerInnCount>0</ManagerInnCount>
+			</CompanyWithSameInfo>
+		</Report>
+	</Data>
+	<ResultInfo ResultType="True" ExecutionTime="890" />
+</Response>
